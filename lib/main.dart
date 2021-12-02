@@ -7,7 +7,11 @@
 //
 import 'package:flutter/material.dart';
 import 'package:kakao_t_ui_dxam/ui/home/home_screen.dart';
+//stless 를 치면 아래에 것이 나온다
+//stless
 
+//stateful  'f5'필요하면(동적) "플러터 숫자 카운터" 할때도 새로고침
+//stateless 'f5'필요없으면
 void main() {
   runApp(const MyApp());
 }

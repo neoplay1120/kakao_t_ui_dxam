@@ -4,6 +4,13 @@
 //stateful  'f5'필요하면(동적) "플러터 숫자 카운터" 할때도 새로고침
 //stateless 'f5'필요없으면
 import 'package:flutter/material.dart';
+import 'package:kakao_t_ui_dxam/ui/home/components/ad.dart';
+
+//stless 를 치면 아래에 것이 나온다
+//stless
+
+//stateful  'f5'필요하면(동적) "플러터 숫자 카운터" 할때도 새로고침
+//stateless 'f5'필요없으면
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key key}) : super(key: key);
@@ -23,8 +30,7 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildBody() {
-    // return Text('text');
-    // alt 엔터
+    final PageController controller = PageController(initialPage: 0);
     return Padding(
       padding: const EdgeInsets.all(30.0),
       child: Column(
@@ -179,6 +185,27 @@ class HomeScreen extends StatelessWidget {
               //   ],
               // ),
             ],
+          ),
+          SizedBox(
+            // width: 100,
+            height:150,
+            child: PageView(
+              /// [PageView.scrollDirection] defaults to [Axis.horizontal].
+              /// Use [Axis.vertical] to scroll vertically.
+              scrollDirection: Axis.horizontal,
+              controller: controller,
+              children: <Widget>[
+                Ad(title: "하이요",
+                  color: Colors.amberAccent,
+                   ),
+                Ad(title: "하이요",
+                  color: Colors.green,
+                ),
+                Ad(title: "하이요",
+                  color: Colors.red,
+                ),
+              ],
+            ),
           ),
         ],
       ),
