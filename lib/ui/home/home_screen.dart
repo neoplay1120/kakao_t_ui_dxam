@@ -4,7 +4,9 @@
 //stateful  'f5'필요하면(동적) "플러터 숫자 카운터" 할때도 새로고침
 //stateless 'f5'필요없으면
 import 'package:flutter/material.dart';
-import 'package:kakao_t_ui_dxam/ui/home/components/ad.dart';
+import 'package:kakao_t_ui_dxam/data/fake_data.dart';
+import 'package:kakao_t_ui_dxam/model/ad.dart';
+import 'package:kakao_t_ui_dxam/ui/home/components/ad_view.dart';
 
 //stless 를 치면 아래에 것이 나온다
 //stless
@@ -188,23 +190,24 @@ class HomeScreen extends StatelessWidget {
           ),
           SizedBox(
             // width: 100,
-            height:150,
+            height: 150,
             child: PageView(
               /// [PageView.scrollDirection] defaults to [Axis.horizontal].
               /// Use [Axis.vertical] to scroll vertically.
               scrollDirection: Axis.horizontal,
               controller: controller,
-              children: <Widget>[
-                Ad(title: "하이요",
-                  color: Colors.amberAccent,
-                   ),
-                Ad(title: "하이요",
-                  color: Colors.green,
-                ),
-                Ad(title: "하이요",
-                  color: Colors.red,
-                ),
-              ],
+              children: fakeAds.map((Ad e) => Adview(ad: e)).toList(),
+              // children: <Widget>[
+              //   Adview(
+              //     ad: fakeAds[0],
+              //   ),
+              //   Adview(
+              //     ad: fakeAds[1],
+              //   ),
+              //   Adview(
+              //     ad: fakeAds[2],
+              //   ),
+              // ],
             ),
           ),
         ],
