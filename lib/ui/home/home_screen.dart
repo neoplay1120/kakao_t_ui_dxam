@@ -33,185 +33,216 @@ class HomeScreen extends StatelessWidget {
 
   Widget _buildBody() {
     final PageController controller = PageController(initialPage: 0);
+    //001 SingleChildScrollView 차일드가 하나만 있는데 하나의 덩어리리로 만들어서 스크롤 만들기(전체 스크롤 적용)
+    //002 ListView 만들기 쉡게 가기 !!! ListView 안에 ListView를 사용하면 충돌나서 스크롤이 안됨
     return Padding(
       padding: const EdgeInsets.all(30.0),
-      child: Column(
+      child: ListView(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                children: [
-                  Image.network(
-                    'https://w.namu.la/s/40de86374ddd74756b31d4694a7434ee9398baa51fa5ae72d28f2eeeafdadf0c475c55c58e29a684920e0d6a42602b339f8aaf6d19764b04405a0f8bee7f598d2922db9475579419aac4635d0a71fdb8a4b2343cb550e6ed93e13c1a05cede75',
-                    width: 80,
-                    height: 80,
-                    fit: BoxFit.cover,
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    '택시',
-                    style: TextStyle(fontSize: 30),
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  Image.network(
-                    'https://w.namu.la/s/40de86374ddd74756b31d4694a7434ee9398baa51fa5ae72d28f2eeeafdadf0c475c55c58e29a684920e0d6a42602b339f8aaf6d19764b04405a0f8bee7f598d2922db9475579419aac4635d0a71fdb8a4b2343cb550e6ed93e13c1a05cede75',
-                    width: 80,
-                    height: 80,
-                    fit: BoxFit.cover,
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    '택시',
-                    style: TextStyle(fontSize: 30),
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  Image.network(
-                    'https://w.namu.la/s/40de86374ddd74756b31d4694a7434ee9398baa51fa5ae72d28f2eeeafdadf0c475c55c58e29a684920e0d6a42602b339f8aaf6d19764b04405a0f8bee7f598d2922db9475579419aac4635d0a71fdb8a4b2343cb550e6ed93e13c1a05cede75',
-                    width: 80,
-                    height: 80,
-                    fit: BoxFit.cover,
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    '택시',
-                    style: TextStyle(fontSize: 30),
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  Image.network(
-                    'https://w.namu.la/s/40de86374ddd74756b31d4694a7434ee9398baa51fa5ae72d28f2eeeafdadf0c475c55c58e29a684920e0d6a42602b339f8aaf6d19764b04405a0f8bee7f598d2922db9475579419aac4635d0a71fdb8a4b2343cb550e6ed93e13c1a05cede75',
-                    width: 80,
-                    height: 80,
-                    fit: BoxFit.cover,
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    '택시',
-                    style: TextStyle(fontSize: 30),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 30,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                children: [
-                  Image.network(
-                    'https://w.namu.la/s/40de86374ddd74756b31d4694a7434ee9398baa51fa5ae72d28f2eeeafdadf0c475c55c58e29a684920e0d6a42602b339f8aaf6d19764b04405a0f8bee7f598d2922db9475579419aac4635d0a71fdb8a4b2343cb550e6ed93e13c1a05cede75',
-                    width: 80,
-                    height: 80,
-                    fit: BoxFit.cover,
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    '택시',
-                    style: TextStyle(fontSize: 30),
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  Image.network(
-                    'https://w.namu.la/s/40de86374ddd74756b31d4694a7434ee9398baa51fa5ae72d28f2eeeafdadf0c475c55c58e29a684920e0d6a42602b339f8aaf6d19764b04405a0f8bee7f598d2922db9475579419aac4635d0a71fdb8a4b2343cb550e6ed93e13c1a05cede75',
-                    width: 80,
-                    height: 80,
-                    fit: BoxFit.cover,
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    '택시',
-                    style: TextStyle(fontSize: 30),
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  Image.network(
-                    'https://w.namu.la/s/40de86374ddd74756b31d4694a7434ee9398baa51fa5ae72d28f2eeeafdadf0c475c55c58e29a684920e0d6a42602b339f8aaf6d19764b04405a0f8bee7f598d2922db9475579419aac4635d0a71fdb8a4b2343cb550e6ed93e13c1a05cede75',
-                    width: 80,
-                    height: 80,
-                    fit: BoxFit.cover,
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    '택시',
-                    style: TextStyle(fontSize: 30),
-                  ),
-                ],
-              ),
-              SizedBox(
-                width: 80,
-                height: 80,
-              ),
-              // Column(
-              //   children: [
-              //     Image.network(
-              //       'https://w.namu.la/s/40de86374ddd74756b31d4694a7434ee9398baa51fa5ae72d28f2eeeafdadf0c475c55c58e29a684920e0d6a42602b339f8aaf6d19764b04405a0f8bee7f598d2922db9475579419aac4635d0a71fdb8a4b2343cb550e6ed93e13c1a05cede75',
-              //       width: 80,
-              //       height: 80,
-              //       fit: BoxFit.cover,
-              //     ),
-              //     SizedBox(height: 10,),
-              //     Text(
-              //       '택시',
-              //       style: TextStyle(fontSize: 30),
-              //     ),
-              //   ],
-              // ),
-            ],
-          ),
-          SizedBox(
-            // width: 100,
-            height: 150,
-            child: PageView(
-              /// [PageView.scrollDirection] defaults to [Axis.horizontal].
-              /// Use [Axis.vertical] to scroll vertically.
-              scrollDirection: Axis.horizontal,
-              controller: controller,
-              children: fakeAds.map((Ad e) => Adview(ad: e)).toList(),
-              // children: <Widget>[
-              //   Adview(
-              //     ad: fakeAds[0],
-              //   ),
-              //   Adview(
-              //     ad: fakeAds[1],
-              //   ),
-              //   Adview(
-              //     ad: fakeAds[2],
-              //   ),
-              // ],
-            ),
-          ),
+          ..._buildMenu(),
+          _buildAds(controller),
+          _buildNotice(),
         ],
       ),
     );
   }
+
+  List<Widget> _buildMenu(){
+    return [
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            children: [
+              Image.network(
+                'https://w.namu.la/s/40de86374ddd74756b31d4694a7434ee9398baa51fa5ae72d28f2eeeafdadf0c475c55c58e29a684920e0d6a42602b339f8aaf6d19764b04405a0f8bee7f598d2922db9475579419aac4635d0a71fdb8a4b2343cb550e6ed93e13c1a05cede75',
+                width: 80,
+                height: 80,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '택시',
+                style: TextStyle(fontSize: 30),
+              ),
+            ],
+          ),
+          Column(
+            children: [
+              Image.network(
+                'https://w.namu.la/s/40de86374ddd74756b31d4694a7434ee9398baa51fa5ae72d28f2eeeafdadf0c475c55c58e29a684920e0d6a42602b339f8aaf6d19764b04405a0f8bee7f598d2922db9475579419aac4635d0a71fdb8a4b2343cb550e6ed93e13c1a05cede75',
+                width: 80,
+                height: 80,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '택시',
+                style: TextStyle(fontSize: 30),
+              ),
+            ],
+          ),
+          Column(
+            children: [
+              Image.network(
+                'https://w.namu.la/s/40de86374ddd74756b31d4694a7434ee9398baa51fa5ae72d28f2eeeafdadf0c475c55c58e29a684920e0d6a42602b339f8aaf6d19764b04405a0f8bee7f598d2922db9475579419aac4635d0a71fdb8a4b2343cb550e6ed93e13c1a05cede75',
+                width: 80,
+                height: 80,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '택시',
+                style: TextStyle(fontSize: 30),
+              ),
+            ],
+          ),
+          Column(
+            children: [
+              Image.network(
+                'https://w.namu.la/s/40de86374ddd74756b31d4694a7434ee9398baa51fa5ae72d28f2eeeafdadf0c475c55c58e29a684920e0d6a42602b339f8aaf6d19764b04405a0f8bee7f598d2922db9475579419aac4635d0a71fdb8a4b2343cb550e6ed93e13c1a05cede75',
+                width: 80,
+                height: 80,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '택시',
+                style: TextStyle(fontSize: 30),
+              ),
+            ],
+          ),
+        ],
+      ),
+      SizedBox(
+        height: 30,
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            children: [
+              Image.network(
+                'https://w.namu.la/s/40de86374ddd74756b31d4694a7434ee9398baa51fa5ae72d28f2eeeafdadf0c475c55c58e29a684920e0d6a42602b339f8aaf6d19764b04405a0f8bee7f598d2922db9475579419aac4635d0a71fdb8a4b2343cb550e6ed93e13c1a05cede75',
+                width: 80,
+                height: 80,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '택시',
+                style: TextStyle(fontSize: 30),
+              ),
+            ],
+          ),
+          Column(
+            children: [
+              Image.network(
+                'https://w.namu.la/s/40de86374ddd74756b31d4694a7434ee9398baa51fa5ae72d28f2eeeafdadf0c475c55c58e29a684920e0d6a42602b339f8aaf6d19764b04405a0f8bee7f598d2922db9475579419aac4635d0a71fdb8a4b2343cb550e6ed93e13c1a05cede75',
+                width: 80,
+                height: 80,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '택시',
+                style: TextStyle(fontSize: 30),
+              ),
+            ],
+          ),
+          Column(
+            children: [
+              Image.network(
+                'https://w.namu.la/s/40de86374ddd74756b31d4694a7434ee9398baa51fa5ae72d28f2eeeafdadf0c475c55c58e29a684920e0d6a42602b339f8aaf6d19764b04405a0f8bee7f598d2922db9475579419aac4635d0a71fdb8a4b2343cb550e6ed93e13c1a05cede75',
+                width: 80,
+                height: 80,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '택시',
+                style: TextStyle(fontSize: 30),
+              ),
+            ],
+          ),
+          SizedBox(
+            width: 80,
+            height: 80,
+          ),
+          // Column(
+          //   children: [
+          //     Image.network(
+          //       'https://w.namu.la/s/40de86374ddd74756b31d4694a7434ee9398baa51fa5ae72d28f2eeeafdadf0c475c55c58e29a684920e0d6a42602b339f8aaf6d19764b04405a0f8bee7f598d2922db9475579419aac4635d0a71fdb8a4b2343cb550e6ed93e13c1a05cede75',
+          //       width: 80,
+          //       height: 80,
+          //       fit: BoxFit.cover,
+          //     ),
+          //     SizedBox(height: 10,),
+          //     Text(
+          //       '택시',
+          //       style: TextStyle(fontSize: 30),
+          //     ),
+          //   ],
+          // ),
+        ],
+      ),
+
+    ];
+
+  }
+
+  SizedBox _buildAds(PageController controller) {
+    return SizedBox(
+          // width: 100,
+          height: 150,
+          child: PageView(
+            /// [PageView.scrollDirection] defaults to [Axis.horizontal].
+            /// Use [Axis.vertical] to scroll vertically.
+            scrollDirection: Axis.horizontal,
+            controller: controller,
+            children: fakeAds.map((Ad e) => Adview(ad: e)).toList(),
+            // children: <Widget>[
+            //   Adview(
+            //     ad: fakeAds[0],
+            //   ),
+            //   Adview(
+            //     ad: fakeAds[1],
+            //   ),
+            //   Adview(
+            //     ad: fakeAds[2],
+            //   ),
+            // ],
+          ),
+        );
+  }
+
+  Widget _buildNotice() {
+    return Column(
+      children:
+          List.generate(50, (index) => ListTile(
+            leading: Icon(Icons.notifications),
+              title: Text('공지 $index'),
+                trailing: Icon(Icons.navigate_next_outlined,),
+          )),
+      //children: List.generate(50, (index) => Text('공지 $index')),
+    );
+  }
 }
+
+///굳이 ListView를 사용하겠다면 아래와 같이 터치가 안되게 만드는 방법을 줄 수 있다.
+//shirinkWrap: true,
+//physics : NeverScrollableScrollPhysics() 굳이 터치가 안되게 만들어서
