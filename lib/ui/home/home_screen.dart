@@ -237,9 +237,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-/////////
-
-
+/////
 ///굳이 ListView를 사용하겠다면 아래와 같이 터치가 안되게 만드는 방법을 줄 수 있다.
 //shirinkWrap: true,
 //physics : NeverScrollableScrollPhysics() 굳이 터치가 안되게 만들어서
