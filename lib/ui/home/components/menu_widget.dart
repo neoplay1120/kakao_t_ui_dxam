@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:kakao_t_ui_dxam/model/menu.dart';
 
 class MenuWidget extends StatelessWidget {
@@ -13,11 +14,22 @@ class MenuWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.network(
-          menu.imageUrl,
-          width: 80,
-          height: 80,
-          fit: BoxFit.cover,
+        Stack(
+          children: [
+            Image.network(
+              menu.imageUrl,
+              width: 80,
+              height: 80,
+              fit: BoxFit.cover,
+            ),
+            if (menu.isFavorite) Positioned(
+              right: 0,
+                bottom: 5,
+                child: Icon(
+                  Icons.star_outlined,
+                  color: Colors.yellow,
+                )),
+          ],
         ),
         Text(
            menu.title,
