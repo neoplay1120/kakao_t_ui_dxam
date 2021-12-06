@@ -22,12 +22,12 @@ class MenuWidget extends StatelessWidget {
               height: 80,
               fit: BoxFit.cover,
             ),
-            if (menu.isFavorite) Positioned(
+            Positioned(
               right: 0,
                 bottom: 5,
                 child: Icon(
                   Icons.star_outlined,
-                  color: Colors.yellow,
+                  color: menu.isFavorite ? Colors.yellow : Colors.black,
                 )),
           ],
         ),
