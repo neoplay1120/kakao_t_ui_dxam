@@ -6,8 +6,10 @@
 import 'package:flutter/material.dart';
 import 'package:kakao_t_ui_dxam/data/fake_data.dart';
 import 'package:kakao_t_ui_dxam/model/ad.dart';
-import 'package:kakao_t_ui_dxam/ui/home/components/ad_view.dart';
-import 'package:kakao_t_ui_dxam/ui/home/components/menu_widget.dart';
+
+
+import 'components/ad_view.dart';
+import 'components/menu_widget.dart';
 
 //stless 를 치면 아래에 것이 나온다
 //stless
@@ -15,8 +17,8 @@ import 'package:kakao_t_ui_dxam/ui/home/components/menu_widget.dart';
 //stateful  'f5'필요하면(동적) "플러터 숫자 카운터" 할때도 새로고침
 //stateless 'f5'필요없으면
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key key}) : super(key: key);
+class KakaoTSreen extends StatelessWidget {
+  const KakaoTSreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

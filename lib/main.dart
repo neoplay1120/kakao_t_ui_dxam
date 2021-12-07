@@ -6,7 +6,9 @@
 //초기 프로젝트 설정 변경 web>pubspec.yaml
 //
 import 'package:flutter/material.dart';
-import 'package:kakao_t_ui_dxam/ui/home/home_screen.dart';
+import 'package:kakao_t_ui_dxam/home/home_screen.dart';
+import 'package:kakao_t_ui_dxam/ui/counter/counter_screen.dart';
+
 //stless 를 치면 아래에 것이 나온다
 //stless
 
