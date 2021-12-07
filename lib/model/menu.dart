@@ -8,10 +8,3 @@ class Menu {
   Menu({this.imageUrl, this.title, this.isFavorite});
 }
 
-
-void main () {
-
-  int num = int.parse(stdin.readLineSync());
-
-  print(num);
-}

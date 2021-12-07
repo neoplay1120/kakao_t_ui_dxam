@@ -8,6 +8,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:kakao_t_ui_dxam/ui/kakao_t/kakao_t_screen.dart';
+
+import 'home/home_screen.dart';
 //stless 를 치면 아래에 것이 나온다
 //stless
 
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: KakaoTSreen(),
+      home: HomeScreen(),
     );
   }
 }
