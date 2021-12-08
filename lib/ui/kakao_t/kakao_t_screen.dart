@@ -7,9 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:kakao_t_ui_dxam/data/fake_data.dart';
 import 'package:kakao_t_ui_dxam/model/ad.dart';
 
-
 import 'components/ad_view.dart';
 import 'components/menu_widget.dart';
+import 'detail_screen.dart';
 
 //stless 를 치면 아래에 것이 나온다
 //stless
@@ -30,11 +30,11 @@ class KakaoTSreen extends StatelessWidget {
           style: TextStyle(color: Colors.black),
         ),
       ),
-      body: _buildBody(),
+      body: _buildBody(context),
     );
   }
 
-  Widget _buildBody() {
+  Widget _buildBody(BuildContext context) {
     final PageController controller = PageController(initialPage: 0);
     //001 SingleChildScrollView 차일드가 하나만 있는데 하나의 덩어리리로 만들어서 스크롤 만들기(전체 스크롤 적용)
     //002 ListView 만들기 쉡게 가기 !!! ListView 안에 ListView를 사용하면 충돌나서 스크롤이 안됨
@@ -42,7 +42,7 @@ class KakaoTSreen extends StatelessWidget {
       padding: const EdgeInsets.all(30.0),
       child: ListView(
         children: [
-          _buildMenu2(),
+          _buildMenu2(context),
           _buildAds(controller),
           _buildNotice(),
         ],
@@ -50,14 +50,25 @@ class KakaoTSreen extends StatelessWidget {
     );
   }
 
-  Widget _buildMenu2() {
+  Widget _buildMenu2(BuildContext context) {
     return GridView.count(
-      crossAxisCount: 4,
-      shrinkWrap: true,
-      childAspectRatio: 2/3,
-      physics: NeverScrollableScrollPhysics(),
-      children: fakeMenus.map((e) => MenuWidget(menu: e)).toList()
-    );
+        crossAxisCount: 4,
+        shrinkWrap: true,
+        childAspectRatio: 2 / 3,
+        physics: NeverScrollableScrollPhysics(),
+        children: fakeMenus.map((menu) {
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+              context, MaterialPageRoute(builder: (context) {
+                return  DetailScreen(
+                  title: menu.title,
+                );
+              }));
+            },
+            child: MenuWidget(menu: menu),
+          );
+        }).toList());
   }
 
   // List<Widget> _buildMenu(){
@@ -204,37 +215,40 @@ class KakaoTSreen extends StatelessWidget {
 
   SizedBox _buildAds(PageController controller) {
     return SizedBox(
-          // width: 100,
-          height: 150,
-          child: PageView(
-            /// [PageView.scrollDirection] defaults to [Axis.horizontal].
-            /// Use [Axis.vertical] to scroll vertically.
-            scrollDirection: Axis.horizontal,
-            controller: controller,
-            children: fakeAds.map((Ad e) => Adview(ad: e)).toList(),
-            // children: <Widget>[
-            //   Adview(
-            //     ad: fakeAds[0],
-            //   ),
-            //   Adview(
-            //     ad: fakeAds[1],
-            //   ),
-            //   Adview(
-            //     ad: fakeAds[2],
-            //   ),
-            // ],
-          ),
-        );
+      // width: 100,
+      height: 150,
+      child: PageView(
+        /// [PageView.scrollDirection] defaults to [Axis.horizontal].
+        /// Use [Axis.vertical] to scroll vertically.
+        scrollDirection: Axis.horizontal,
+        controller: controller,
+        children: fakeAds.map((Ad e) => Adview(ad: e)).toList(),
+        // children: <Widget>[
+        //   Adview(
+        //     ad: fakeAds[0],
+        //   ),
+        //   Adview(
+        //     ad: fakeAds[1],
+        //   ),
+        //   Adview(
+        //     ad: fakeAds[2],
+        //   ),
+        // ],
+      ),
+    );
   }
 
   Widget _buildNotice() {
     return Column(
-      children:
-          List.generate(50, (index) => ListTile(
-            leading: Icon(Icons.notifications),
-              title: Text('공지 $index'),
-                trailing: Icon(Icons.navigate_next_outlined,),
-          )),
+      children: List.generate(
+          50,
+          (index) => ListTile(
+                leading: Icon(Icons.notifications),
+                title: Text('공지 $index'),
+                trailing: Icon(
+                  Icons.navigate_next_outlined,
+                ),
+              )),
       //children: List.generate(50, (index) => Text('공지 $index')),
     );
   }
